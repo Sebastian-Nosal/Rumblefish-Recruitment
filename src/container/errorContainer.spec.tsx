@@ -4,7 +4,7 @@ import { AppContext } from '../App';
 import { ErrorNotification } from '../types/model';
 
 
-jest.mock('./ErrorContainer', () => ({
+jest.mock('./errorContainer', () => ({
   __esModule: true,
    
   default: ({ type, description, header, hide }:{type:string,description:string,header:string,hide:VoidFunction}) => (

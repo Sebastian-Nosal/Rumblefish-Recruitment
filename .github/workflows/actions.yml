@@ -12,7 +12,6 @@ permissions:
     pages: write
     id-token: write
 
-
 jobs:
   test-and-lint:
     runs-on: ubuntu-latest
