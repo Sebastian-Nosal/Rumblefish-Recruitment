@@ -17,7 +17,7 @@ export default function ErrorContainer()
 }
 
 function ErrorNote({type,description,header,hide}:{type:string,description:string,header:string,hide:()=>void}) {
-  return(<div className="fixed flex top-0 right-0 w-full md:bottom-6 md:right-2 md:top-auto md:w-1/4 p-4 bg-fireorange text-gray-100/80 shadow-lg md:rounded-lg">
+  return(<div data-testid="error-note" className="fixed flex top-0 right-0 w-full md:bottom-6 md:right-2 md:top-auto md:w-1/4 p-4 bg-fireorange text-gray-100/80 shadow-lg md:rounded-lg">
     <div className="flex items-center text-3xl me-2 justify-center float-start w-1/4">
       <span className="border-2 w-14 text-center border-gray-100 rounded-full p-2 font-bold">!</span>
     </div>
