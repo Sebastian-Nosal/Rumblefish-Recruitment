@@ -1,0 +1,16 @@
+{
+    "errors": {
+        "client": {
+          "header": "Error occurred!",
+          "message": "There was an error. Please try again."
+        },
+        "server": {
+          "header": "Server Error occurred!",
+          "message": "There was an error on the server side. Please try again in a few minutes, and if the problem persists, contact us."
+        },
+        "unknown": {
+          "header": "Unknown Error occurred!",
+          "message": "An unknown error occurred. Please try again or contact us."
+        }
+      }
+}

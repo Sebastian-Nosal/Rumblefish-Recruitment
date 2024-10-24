@@ -1,0 +1,52 @@
+/* 
+import { getMovies, putDecision, ApiCallError } from './apiHandler';
+import { Action} from '../types/model.d';
+import { recommendations } from "../mock/db.json";
+
+const mockRecommendations = recommendations;
+
+describe('getMovies', () => {
+  it('should return a list of movies ', async () => {
+    const movies = await getMovies();
+    expect(movies).toEqual(recommendations);
+  });
+
+  it('should throw an ApiCallError if an unknown error occurs', async () => {
+    const originalData = Promise.resolve;
+    Promise.resolve = jest.fn(() => { throw new Error('Test error') });
+    
+    await expect(getMovies()).rejects.toThrow(new ApiCallError('Unknown Error', '0'));
+
+    Promise.resolve = originalData;
+  });
+});
+
+describe('putDecision', () => {
+  const mockMovie = {
+    id: '123', title: 'Test Movie',
+    imageURL: '',
+    summary: '',
+    rating: 0
+  };
+  
+  it('should return true for accepted movies', async () => {
+    const result = await putDecision(Action.Accept, mockMovie);
+    expect(result).toBe(true);
+  });
+
+  it('should return true for rejected movies', async () => {
+    const result = await putDecision(Action.Reject, mockMovie);
+    expect(result).toBe(true);
+  });
+
+  it('should throw an ApiCallError if an unknown error occurs during the request', async () => {
+    const originalPromise = Promise.resolve;
+    Promise.resolve = jest.fn(() => { throw new Error('Test error') });
+    
+    await expect(() => putDecision(Action.Accept, mockMovie))
+      .rejects.toThrow(new ApiCallError('Unknown Error', '0'));
+
+    Promise.resolve = originalPromise;
+  });
+});
+*/
