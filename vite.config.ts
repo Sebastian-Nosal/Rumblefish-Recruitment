@@ -4,7 +4,7 @@ import tailwindcss from "tailwindcss";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: 'Rumblefish-Recruitment',
+  base: '/Rumblefish-Recruitment/',
   css: {
     postcss: {
       plugins: [tailwindcss()]
