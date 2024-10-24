@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# Raport z działania aplikacji
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Testy przeglądarki
 
-Currently, two official plugins are available:
+Zgodnie z poleceniem, aplikacja działa poprawnie na przeglądarkach Chrome w wersjach na PC i Android. Ręcznie przetestowałem ją na następujących urządzeniach:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Komputer (Windows 10) z wyświetlaczem 24" – Chrome i Firefox
+- Laptop 12" – Chrome
+- Tablet 12" – Chrome
+- Telefon 7" – Chrome
+- Emulatory w narzędziach deweloperskich przeglądarki Firefox
 
-## Expanding the ESLint configuration
+Na żadnym z powyższych urządzeń nie wystąpiły problemy z funkcjonowaniem aplikacji ani deformacjami interfejsu użytkownika uniemożliwiającymi pracę.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Obsługa gestów i mechanizmu przeciągania
 
-- Configure the top-level `parserOptions` property like this:
+Według dostępnych mi informacji, Chrome (PC) nie obsługuje gestów związanych z dotykiem. Dlatego, poza obsługą gestów na urządzeniach mobilnych, zrealizowałem skrypt oparty o mechanizm przeciągania elementów, który działa podobnie.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Testy integracyjne z backendem
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+Testy integracyjne z backendem można wykonać np. za pomocą `json-server` i mockowania adresu URL. Nie implementowałem tego, ponieważ:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- Pobieranie danych z API jest wykomentowane.
+- Komunikacja z serwerem jest udawana (linie kodu odpowiedzialne za obsługę zapytań HTTP zastępowane są statycznymi odpowiedziami).
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## System informowania o błędach
+
+Został wykonany system informowania o błędach działania aplikacji. Z powodu braku komunikacji z API, błędy nie mają możliwości wystąpienia. Niemniej, system ten został przeze mnie przetestowany zarówno ręcznie, jak i za pomocą automatycznych testów.
+
