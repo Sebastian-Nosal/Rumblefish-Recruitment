@@ -1,7 +1,7 @@
-import Factory from './factory'; // Adjust the import path as necessary
+import Factory from './factory';
 import { ErrorNotification } from "../types/model";
 
-// Mock content.json for testing
+
 jest.mock('../assets/content.json', () => ({
   errors: {
     client: {

@@ -19,11 +19,9 @@ test('renders movie card with title, summary and rating', () => {
     />
   );
 
-  // Sprawdzenie, czy tytuł filmu jest widoczny
   const titleElement = screen.getByText(/test movie/i);
   expect(titleElement).toBeInTheDocument();
 
-  // Sprawdzenie, czy ocena filmu jest wyświetlana
   const ratingElement = screen.getByText(/8.5/);
   expect(ratingElement).toBeInTheDocument();
 });

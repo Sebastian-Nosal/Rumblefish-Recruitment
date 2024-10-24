@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { AppContext } from "../App"; // Assuming this is your context file
+import { AppContext } from "../App"; 
 import NavPanel from "./navpanel"; 
 
 
@@ -44,6 +44,6 @@ describe("NavPanel Component", () => {
   test("toggles mode on button click", () => {
     const modeButton = screen.getAllByRole("button");
     fireEvent.click(modeButton[1]);
-    expect(setModeMock).toHaveBeenCalledTimes(1); // Check if setMode was called
+    expect(setModeMock).toHaveBeenCalledTimes(1);
   });
 });
